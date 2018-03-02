@@ -1,0 +1,89 @@
+
+
+<div class="row">
+
+
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <h3 class="box-title">Bonjour  {{$ctrl.$rootScope.settings.userName|| 'Anonyme'}} </h3>
+
+            <div class="box-tools pull-right">
+                <button type="button" class="btn-sm btn-primary" ng-click="$ctrl.openSettings()">Settings</button>
+                <button type="button" class="btn-sm btn-danger"ng-click="$ctrl.initDataInController()">Rejouer</button>
+
+            </div>
+
+            <div class="box-tools pull-right">
+
+
+            </div>
+        </div>
+        <div class="box-body">
+            <div class="col-sm-12" ng-if="$ctrl.errorSettingsMessage">
+                <div uib-alert class="alert-danger" >
+
+
+                    please configure the settings
+                </div>
+            </div>
+            <div class="row" ng-if="!$ctrl.errorSettingsMessage">
+
+                <div class="col-sm-12" ng-if="$ctrl.word.completed.result">
+                    <div uib-alert ng-class="$ctrl.word.completed.class" >
+                        {{$ctrl.word.completed.message}}
+
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <ul class="todo-list">
+
+                        <li>
+                            <span class="handle "> <i>+</i> </span>
+                            <span class="text">Score:</span>
+                            <span class="text pull-right ">{{$ctrl.score}}</span>
+
+                        </li>
+                        <li>
+                            <span class="handle "> <i>+</i> </span>
+                            <span class="text">Essais:</span>
+                            <span class="text pull-right ">  {{$ctrl.currentTry}}</span>
+
+                        </li>
+                        <li>
+                            <span class="handle "> <i>+</i> </span>
+                            <span class="text">restant :</span>
+                            <span class="text pull-right ">{{$ctrl.maxTry-$ctrl.currentTry}}</span>
+
+                        </li>
+                        <li>
+                            <span class="handle "> <i>+</i> </span>
+                            <span class="text">Completed :</span>
+                            <span class="text pull-right ">{{!!$ctrl.word.completed.message}}</span>
+
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="col-sm-6">
+                    <button ng-repeat="c in $ctrl.word.parts" class="btn btn-info" uib-tooltip="info">{{c.letter}}</button>
+                </div>
+                <div class="col-sm-3">
+                    <button ng-repeat="c in $ctrl.letters" class="btn  "
+                            ng-class="{
+                disabled: !c.enabled ,
+                'btn-info':c.enabled ,
+                'btn-danger':!c.enabled
+                }"
+                            ng-click="$ctrl.checkLetter($index,c)"
+                            uib-tooltip="info">{{c.name}}
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+

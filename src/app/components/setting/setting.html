@@ -1,0 +1,32 @@
+
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Settings</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="$ctrl.closeModal()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form ng-submit="$ctrl.submitSettings()" name="$ctrl.SettingsForm">
+                    <div class="form-group">
+                        <label for="userName">Nom d'utilisateur</label>
+                        <input type="text" class="form-control" id="userName"
+                               ng-model="$ctrl.settings.userName"
+                               required
+                               aria-describedby="emailHelp" placeholder="Nom d'utilisateur">
+                        <small  class="form-text text-muted">Saisir votre nom d'utilisateur.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="tryNumber">Nombre d'essais </label>
+                        <input type="number" class="form-control" id="tryNumber" required
+                               ng-model="$ctrl.settings.maxTry" placeholder="Nombre d'essais">
+                        <small class="form-text text-muted">Saisir le nombre d'essais.</small>
+                    </div>
+                    </form>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" ng-click="$ctrl.submitSettings()">Save changes</button>
+                <button type="button" class="btn btn-secondary" ng-click="$ctrl.closeModal()">Close</button>
+            </div>
+        </div>
