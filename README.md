@@ -24,12 +24,16 @@ In case of error, make sure you have latest version of Gulp installed
 ## Usage - Production
 Run `npm run build` to compile and minify all files. Find them in `/dist` folder.
 
-# AngularJS 1.x & ES6 & Module bundler (Webpack):
+`
 
-In this section we'll described some specific techniques using the combination
-of `AngularJS 1.x` and `ES6` and `Webpack (or any other module bundler)`
-
-Url: https://github.com/matiishyn/angular-es6
+more info about this starter : Url: https://github.com/matiishyn/angular-es6
 
 
 
+# Le jeu du pendu 
+
+une explication qui montre comment jouer et configurer le jeu :
+
+ [Demo](https://youtu.be/_zfywnYt13k):
+ 
+ 
